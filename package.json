@@ -1,0 +1,38 @@
+{
+  "name": "poai-tickets-api",
+  "version": "1.0.0",
+  "description": "a backend api service for booking tickets to poets on an island show",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon index.js"
+  },
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Bwise1/poai-tickets-api.git"
+  },
+  "keywords": [
+    "tickets",
+    "poets",
+    "island",
+    "poetry",
+    "isaac",
+    "ayowayne",
+    "words-smit"
+  ],
+  "author": "benjys",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Bwise1/poai-tickets-api/issues"
+  },
+  "homepage": "https://github.com/Bwise1/poai-tickets-api#readme",
+  "dependencies": {
+    "body-parser": "^1.20.1",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "global": "^4.4.0",
+    "mysql2": "^3.1.2",
+    "nodemon": "^2.0.20"
+  }
+}
