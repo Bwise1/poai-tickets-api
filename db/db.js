@@ -1,11 +1,23 @@
-import mysql from "mysql2";
-import dotenv from "dotenv";
+const mysql = require("mysql2/promise");
+const dotenv = require("dotenv");
 
-const connection = mysql.createConnection(process.env.DATABASE_URL);
+dotenv.config();
 
-connection.connect(function (err) {
-  if (err) throw err;
-  console.log("Connected to PlanetScale!");
-});
+async function query(sql, params) {
+  const connection = await mysql.createConnection(process.env.DATABASE_URL);
+  const [results] = await connection.execute(sql, params);
 
-module.exports = connection;
+  return results;
+}
+
+module.exports = {
+  query,
+};
+// const connection = mysql.createConnection(process.env.DATABASE_URL);
+
+// connection.connect(function (err) {
+//   if (err) throw err;
+//   console.log("Connected to PlanetScale!");
+// });
+
+// module.exports = { connection };
