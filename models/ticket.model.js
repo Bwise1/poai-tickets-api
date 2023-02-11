@@ -17,3 +17,24 @@ Ticket.create = (newTicket, result) => {
     result(null, { id: resultId, ...newTicket });
   });
 };
+
+Ticket.getAllTickets = async () => {
+  let query = "SELECT * FROM Ticket";
+  console.log("here");
+  // let result = await new Promise((resolve, reject) => {
+  //   db.query(query, (err, res) => {
+  //     if (err) {
+  //       console.log("error: ", err);
+  //       reject(err);
+  //     } else {
+  //       console.log("tickets: ", res);
+  //       resolve(res);
+  //     }
+  //   });
+  // });
+  let result = await db.query(query);
+  console.log("From model", result);
+  return result;
+};
+
+module.exports = Ticket;

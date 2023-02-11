@@ -5,6 +5,7 @@ module.exports = (app) => {
 
   //create new ticket endpoint
   router.post("/", tickets.create);
+  router.get("/", tickets.getAll);
 
   app.use("/api/v1/ticket", router);
 };
